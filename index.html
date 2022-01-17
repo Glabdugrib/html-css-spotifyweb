@@ -5,6 +5,7 @@
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <link rel="stylesheet" href="style.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
    <title>Document</title>
 </head>
 <body class="debug">
@@ -15,16 +16,32 @@
          <!-- Info section -->
          <div class="info-section">
             <div class="logo-section">
-               Logo
+               <img src="img/logo.svg" alt="" class="logo-big">
+               <img src="img/logo-small.svg" alt="" class="logo-small">
             </div>
             <div class="home-section">
                <ul>
-                  <li><a href="#"></a>Home</li>
-                  <li><a href="#"></a>Cerca</li>
-                  <li><a href="#"></a>La tua libreria</li>
+                  <li>
+                     <div class="icon-wrapper">
+                        <img src="img/home.svg" alt="">
+                     </div>
+                     <span class="hidden-sm-sidebar">Home</span>
+                  </li>
+                  <li>
+                     <div class="icon-wrapper">
+                        <img src="img/search.svg" alt="">
+                     </div>
+                     <span class="hidden-sm-sidebar">Cerca</span>
+                  </li>
+                  <li>
+                     <div class="icon-wrapper">
+                        <img src="img/libreria.svg" alt="">
+                     </div>
+                     <span class="hidden-sm-sidebar">La tua libreria</span>
+                  </li>
                </ul>
             </div>
-            <div class="playlist-section">
+            <div class="playlist-section hidden-sm-sidebar">
                <ul>
                   <h3>Playlist</h3>
                   <li>Crea Playlist</li>
@@ -71,7 +88,15 @@
 
    <!-- Toolbar -->
    <footer class="toolbar">
-      footer
+      <div class="song-info-section">
+         Song info
+      </div>
+      <div class="timeline-section">
+         Timeline
+      </div>
+      <div class="volume-section">
+         Volume
+      </div>
    </footer>
 </body>
 </html>
