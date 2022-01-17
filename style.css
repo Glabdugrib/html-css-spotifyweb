@@ -37,7 +37,7 @@ main {
 /* - - - SIDEBAR - - - */
 
 .sidebar {
-   width: 230px;
+   min-width: 230px;
    padding: 20px;
    display: flex;
    flex-direction: column;
@@ -46,6 +46,8 @@ main {
    color: #A3A3A3;
    font-weight: bold;
 }
+
+   /* Logo */
 
 .logo-section {
    display: flex;
@@ -63,6 +65,8 @@ main {
    height: 30px;
    display: none;
 }
+
+   /* Home */
 
 .home-section {
    font-size: 16px;
@@ -84,6 +88,42 @@ main {
    width: 25px;
 }
 
+   /* Profile */
+
+.download-cta {
+   display: flex;
+   align-items: center;
+   gap: 10px;
+   vertical-align: middle;
+   padding-bottom: 10px;
+   margin-bottom: 10px;
+   border-bottom: 2px solid #A3A3A3;
+}
+
+.download-cta .img-wrapper {
+   height: 20px;
+   aspect-ratio: 1 / 1;
+}
+
+.profile {
+   display: flex;
+   align-items: center;
+   gap: 10px;
+}
+
+.profile .img-wrapper {
+   width: 30px;
+   aspect-ratio: 1 / 1;
+   border-radius: 50%;
+   background-color: #808080;
+   overflow: hidden;
+}
+
+.profile-name {
+   color: white;
+   font-weight: bolder;
+   font-size: 17px;
+}
 
 
 /* - - - MAIN CONTENT - - - */
@@ -125,8 +165,13 @@ main {
    color: #FFFFFF;
 }
 
+   /* Song info */
+
 .song-info-section {
+   width: 180px;
    display: flex;
+   justify-content: space-between;
+   align-items: center;
    gap: 10px;
 }
 
@@ -137,21 +182,33 @@ main {
 
 .song-info {
    display: flex;
+   align-items: center;
+   gap: 10px;
+}
+
+.song-wrapper {
+   display: flex;
    flex-direction: column;
 }
 
-.song-info > * {
-   border: 1px solid white;
-   background-color: red;
+.song-buttons {
+   display: flex;
+   align-items: center;
+   gap: 15px;
 }
+
+.song-buttons .icon-wrapper {
+   font-size: 18px;
+}
+
+   /* Timeline */
 
 .timeline-section {
    width: 35%;
    min-width: 220px;
-}
-
-.timeline-section div {
-   border: 1px solid orange;
+   display: flex;
+   flex-direction: column;
+   gap: 10px;
 }
 
 .timeline-section .control-buttons {
@@ -162,7 +219,7 @@ main {
    font-size: 25px;
 }
 
-.timeline-section .control-buttons .fa-play-circle{
+.timeline-section .control-buttons .fa-play-circle {
    font-size: 35px;
 }
 
@@ -170,12 +227,32 @@ main {
    display: flex;
 }
 
-.time-bar {
+.time-bar-wrapper {
    flex-grow: 1;
-   flex-shrink: 1;
+   flex-shrink: 5;
+   padding: 0 15px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
 }
 
+.time-bar {
+   height: 7px;
+   width: 100%;
+   border-radius: 7px;
+   background-color: #5A5A5A;
+   position: relative;
+}
 
+.actual-time-bar {
+   position: absolute;
+   left: 0;
+   z-index: 1;
+   width: 25%;
+   height: 100%;
+   border-radius: 7px;
+   background-color: #FFFFFF;
+}
 
 
 /*  - - - MEDIA QUERIES - - - */
@@ -184,6 +261,7 @@ main {
 @media screen and (max-width: 550px) {
 
    .sidebar {
+      min-width: 50px;
       width: 50px;
       padding: 8px 0;
    }
@@ -205,6 +283,15 @@ main {
    }
 
    .home-section li {
+      justify-content: center;
+   }
+
+   .download-cta {
+      justify-content: center;
+      border: none;
+   }
+
+   .profile {
       justify-content: center;
    }
 }
