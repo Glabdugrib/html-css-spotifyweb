@@ -10,6 +10,10 @@ html {
    font-family: 'Roboto', sans-serif;
 }
 
+body {
+   overflow: hidden;
+}
+
 a {
    text-decoration: none;
 }
@@ -26,6 +30,7 @@ ul {
 main {
    width: 100%;
    height: calc(100vh - 90px);
+   overflow-y: auto;
    display: flex;
 }
 
@@ -80,6 +85,7 @@ main {
 }
 
 
+
 /* - - - MAIN CONTENT - - - */
 
 .main-content {
@@ -94,26 +100,82 @@ main {
 .navbar-list {
    display: flex;
    justify-content: center;
-   gap: 10px
+   flex-wrap: wrap;
+   gap: 10px;
+   white-space: nowrap;
 }
 
-.row {
+.main-content .row {
    height: 150px;
 }
 
-footer {
-   
-}
+
+/* - - - TOOLBAR - - - */
 
 .toolbar {
    height: 90px;
    width: 100%;
+   padding: 0 10px;
    position: fixed;
    bottom: 0;
    display: flex;
    justify-content: space-between;
    align-items: center;
+   background-color: #282828;
+   color: #FFFFFF;
 }
+
+.song-info-section {
+   display: flex;
+   gap: 10px;
+}
+
+.song-info-section .img-wrapper {
+   height: 45px;
+   aspect-ratio: 1 / 1;
+}
+
+.song-info {
+   display: flex;
+   flex-direction: column;
+}
+
+.song-info > * {
+   border: 1px solid white;
+   background-color: red;
+}
+
+.timeline-section {
+   width: 35%;
+   min-width: 220px;
+}
+
+.timeline-section div {
+   border: 1px solid orange;
+}
+
+.timeline-section .control-buttons {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   gap: 25px;
+   font-size: 25px;
+}
+
+.timeline-section .control-buttons .fa-play-circle{
+   font-size: 35px;
+}
+
+.timeline {
+   display: flex;
+}
+
+.time-bar {
+   flex-grow: 1;
+   flex-shrink: 1;
+}
+
+
 
 
 /*  - - - MEDIA QUERIES - - - */
