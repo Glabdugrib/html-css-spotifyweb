@@ -1,0 +1,47 @@
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+main {
+   width: 100%;
+   height: calc(100vh - 100px);
+   display: flex;
+}
+
+footer {
+   height: 90px;
+   width: 100%;
+}
+
+.sidebar {
+   width: 230px;
+}
+
+.main-content {
+   flex-grow: 1;
+}
+
+
+
+
+/* DEBUG */
+
+.debug main {
+   /* border: 2px solid black; */
+   background-color: grey;
+}
+
+.debug footer {
+   /* border: 2px solid red; */
+   background-color: orange;
+}
+
+.debug .sidebar {
+   background-color: green;
+}
+
+.debug .main-content {
+   background-color: rgb(82, 82, 82);
+}
