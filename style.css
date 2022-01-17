@@ -24,9 +24,18 @@ footer {
 }
 
 
+/*  - - - MEDIA QUERIES - - - */
+
+/* XS layout */
+@media screen and (max-width: 550px) {
+
+   .sidebar {
+      width: 50px;
+   }
+}
 
 
-/* DEBUG */
+/* - - - DEBUG - - - */
 
 .debug main {
    /* border: 2px solid black; */
