@@ -221,11 +221,13 @@ main {
    /* Song info */
 
 .song-info-section {
-   width: 180px;
+   flex-shrink: 1;
    display: flex;
    justify-content: space-between;
    align-items: center;
    gap: 10px;
+   min-width: 160px;
+   /* border: 1px solid red; */
 }
 
 .song-info-section .img-wrapper {
@@ -244,6 +246,16 @@ main {
    flex-direction: column;
 }
 
+.song-name {
+   font-weight: bold;
+}
+
+.song-author {
+   font-weight: bold;
+   font-size: 12px;
+   color: #848484;
+}
+
 .song-buttons {
    display: flex;
    align-items: center;
@@ -257,23 +269,33 @@ main {
    /* Timeline */
 
 .timeline-section {
-   width: 35%;
-   min-width: 220px;
+   width: 40%;
+   min-width: 210px;
+   flex-shrink: 3;
    display: flex;
    flex-direction: column;
    gap: 10px;
+   padding: 10px;
+   /* border: 1px solid red; */
 }
 
-.timeline-section .control-buttons {
+.control-buttons-wrapper {
    display: flex;
    justify-content: center;
-   align-items: center;
-   gap: 25px;
-   font-size: 25px;
 }
 
-.timeline-section .control-buttons .fa-play-circle {
-   font-size: 35px;
+.control-buttons {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   /* gap: 25px; */
+   min-width: 200px;
+   font-size: 20px;
+   /* border: 1px solid blue; */
+}
+
+.control-buttons .fa-play-circle {
+   font-size: 30px;
 }
 
 .timeline {
@@ -282,7 +304,7 @@ main {
 
 .time-bar-wrapper {
    flex-grow: 1;
-   flex-shrink: 5;
+   flex-shrink: 1;
    padding: 0 15px;
    display: flex;
    justify-content: center;
@@ -290,11 +312,12 @@ main {
 }
 
 .time-bar {
-   height: 7px;
+   height: 6px;
    width: 100%;
-   border-radius: 7px;
+   border-radius: 6px;
    background-color: #5A5A5A;
    position: relative;
+   overflow: hidden;
 }
 
 .actual-time-bar {
@@ -303,7 +326,36 @@ main {
    z-index: 1;
    width: 25%;
    height: 100%;
-   border-radius: 7px;
+   background-color: #FFFFFF;
+}
+
+   /* Volume */
+
+.volume-section {
+   flex-shrink: 1;
+   display: flex;
+   align-items: center;
+   gap: 15px;
+   min-width: 160px;
+   /* border: 1px solid red; */
+}
+
+.volume-bar {
+   height: 6px;
+   width: 60px;
+   flex-shrink: 1;
+   border-radius: 6px;
+   background-color: #5A5A5A;
+   position: relative;
+   overflow: hidden;
+}
+
+.actual-volume-bar {
+   position: absolute;
+   left: 0;
+   z-index: 1;
+   width: 65%;
+   height: 100%;
    background-color: #FFFFFF;
 }
 
@@ -345,6 +397,20 @@ main {
 
    .profile {
       justify-content: center;
+   }
+
+   .song-info-section {
+      padding-right: 30px;
+   }
+
+   .song-info .img-wrapper {
+      height: 30px;
+   }
+
+   .song-buttons {
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 0;
    }
 }
 
