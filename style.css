@@ -48,6 +48,8 @@ main {
    background-color: black;
    color: #A3A3A3;
    font-weight: bold;
+
+   /* overflow-y: auto; */
 }
 
    /* Logo */
@@ -89,6 +91,26 @@ main {
    align-items: center;
    gap: 8px;
    padding: 10px 0;
+   position: relative;
+}
+
+.home-section li.active::after {
+   content: "";
+   display: block;
+   height: 70%;
+   width: 3px;
+   background-color: #ADFF2F;
+   position: absolute;
+   top: 15%;
+   left: -20px;
+}
+
+.home-section li.active {
+   color: white;
+}
+
+.home-section li.active svg {
+   fill: white;
 }
 
 .home-section li:hover {
@@ -132,7 +154,6 @@ main {
 .new-playlist .icon-wrapper {
    height: 40px;
    aspect-ratio: 1 / 1;
-   /* border-radius: 5px; */
    display: flex;
    justify-content: center;
    align-items: center;
@@ -142,10 +163,6 @@ main {
 .new-playlist i {
    font-size: 22px;
    color: black;
-}
-
-.playlist-list {
-   /* overflow-y: scroll;  */
 }
 
 .playlist-list li {
@@ -295,27 +312,50 @@ main {
 }
 
 .main-content .row {
-   min-height: 150px;
    padding: 20px;
-   border-bottom: 1px solid white;
-   background-color: rgb(255, 219, 151);
+}
+
+.row h2 {
+   font-size: 30px;
+   color: white;
+   font-weight: 900;
+   margin-bottom: 30px;
+}
+
+.card-wrapper {
+   display: flex;
+   flex-wrap: wrap;
+   gap: 10px;
+   border: 1px solid white;
+   padding: 5px;
 }
 
 .card {
-   height: 100px;
-   aspect-ratio: 1 / 1;
-   background-color: orange;
-   position: relative;
+   border: 1px solid red;
+   padding: 5px;
+   min-width: 15%;
+   flex-grow: 1;
 }
 
-.card:hover::after {
+
+.card-thumb {
+   aspect-ratio: 1 / 1;
+   background-color: rgb(255, 219, 151);
+   position: relative;
+   margin-bottom: 10px;
+}
+
+.card-thumb:hover {
+   cursor: pointer;
+}
+
+.card-thumb:hover::after {
    content: "\f144";
    display: flex;
    justify-content: center;
    align-items: center;
    font-family: "Font Awesome 5 Free";
    color: white;
-
    font-size: 40px;
    position: absolute;
    top: 0;
@@ -323,6 +363,12 @@ main {
    left: 0;
    bottom: 0;
    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.card-desc {
+   border: 1px solid orange;
+   color: white;
+   /* max-width: 210px; */
 }
 
 
@@ -506,7 +552,6 @@ main {
    right: 0;
    transform: translate(50%, -50%);
    border-radius: 50%;
-   /* background-color: rgba(255, 0, 0, 0.5); */
    background-color: white;
    z-index: 2;
    display: none;
@@ -574,6 +619,22 @@ main {
 
 /*  - - - MEDIA QUERIES - - - */
 
+/* M layout */
+@media screen and (max-width: 980px) {
+   
+   .card {
+      min-width: 23%;
+   }
+}
+
+/* S layout */
+@media screen and (max-width: 640px) {
+   
+   .card {
+      min-width: 48%;
+   }
+}
+
 /* XS layout */
 @media screen and (max-width: 550px) {
 
@@ -627,6 +688,10 @@ main {
 
    .upgrade-section {
       width: calc(100% - 50px);
+   }
+
+   .home-section li.active::after {
+      left: 0;
    }
 }
 
