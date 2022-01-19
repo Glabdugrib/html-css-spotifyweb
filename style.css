@@ -254,6 +254,7 @@ main {
    justify-content: flex-end;
    align-items: center;
    background-color: rgba(0, 0, 0, 0.5);
+   z-index: 10;
 }
 
 .upgrade-btn {
@@ -276,6 +277,10 @@ main {
    cursor: pointer;
 }
 
+.navbar-section {
+   margin-bottom: 20px;
+}
+
 .navbar-list {
    display: flex;
    justify-content: center;
@@ -291,7 +296,6 @@ main {
    font-weight: bolder;
    color: #7B7E82;
    position: relative;
-   /* border: 1px solid red; */
 }
 
 .navbar-list li:hover {
@@ -313,6 +317,7 @@ main {
 
 .main-content .row {
    padding: 20px;
+   margin-bottom: 10px;
 }
 
 .row h2 {
@@ -325,18 +330,21 @@ main {
 .card-wrapper {
    display: flex;
    flex-wrap: wrap;
-   gap: 10px;
-   border: 1px solid white;
-   padding: 5px;
+   row-gap: 30px;
 }
 
 .card {
-   border: 1px solid red;
-   padding: 5px;
-   min-width: 15%;
-   flex-grow: 1;
+   width: 15%;
+   margin-right: 2%;
 }
 
+.artists .card-thumb {
+   border-radius: 50%;
+}
+
+.card:nth-of-type(6n) {
+   margin-right: 0;
+}
 
 .card-thumb {
    aspect-ratio: 1 / 1;
@@ -356,7 +364,7 @@ main {
    align-items: center;
    font-family: "Font Awesome 5 Free";
    color: white;
-   font-size: 40px;
+   font-size: calc(15px + 4vw);
    position: absolute;
    top: 0;
    right: 0;
@@ -366,9 +374,20 @@ main {
 }
 
 .card-desc {
-   border: 1px solid orange;
    color: white;
-   /* max-width: 210px; */
+   text-align: center;
+   overflow: hidden;
+}
+
+.card-title {
+   font-size: 18px;
+   font-weight: 900;
+   margin-bottom: 5px;
+}
+
+.card-subtitle {
+   font-size: 14px;
+   color: #7B7E82;
 }
 
 
@@ -523,7 +542,6 @@ main {
    border-radius: 6px;
    background-color: #5A5A5A;
    position: relative;
-   /* overflow: hidden; */
 }
 
 .actual-time-bar {
@@ -623,7 +641,12 @@ main {
 @media screen and (max-width: 980px) {
    
    .card {
-      min-width: 23%;
+      width: 23%;
+      margin-right: calc((100% - 23% * 4) / 3);
+   }
+   
+   .card:nth-of-type(4n) {
+      margin-right: 0;
    }
 }
 
@@ -631,7 +654,12 @@ main {
 @media screen and (max-width: 640px) {
    
    .card {
-      min-width: 48%;
+      width: 48%;
+      margin-right: calc(100% - 48% * 2);
+   }
+   
+   .card:nth-of-type(2n) {
+      margin-right: 0;
    }
 }
 
