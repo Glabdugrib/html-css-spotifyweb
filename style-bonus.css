@@ -1,0 +1,93 @@
+/* BONUS 1 - cover nascoste */
+
+/* M layout */
+@media screen and (max-width: 980px) {
+   
+   .card:nth-of-type(n+5) {
+      display: none;
+   }
+}
+
+/* S layout */
+@media screen and (max-width: 640px) {
+   
+   .card:nth-of-type(n+3) {
+      display: none;
+   }
+}
+
+
+
+/* BONUS 2 - Hide upgrade cta */
+
+
+
+
+
+/* BONUS 3 - Animations */
+
+@keyframes slidein {
+   from {
+      width: 0;
+   }
+ 
+   to {
+      width: 65%;
+   }
+}
+
+.volume-bar:hover .actual-volume-bar {
+   animation-duration: 0.3s;
+   animation-name: slidein;
+   animation-fill-mode: forwards;
+}
+
+.time-bar:hover .actual-time-bar {
+   animation-duration: 0.3s;
+   animation-name: slidein;
+   animation-fill-mode: forwards;
+}
+
+
+/* BONUS 4 -  */
+
+@media screen and (max-width: 550px) {
+
+   .hidden-xs-toolbar {
+      display: none;
+   }
+
+   .toolbar {
+      padding: 0 15px;
+   }
+
+   .song-info-section {
+      justify-content: flex-start;
+      gap: 20px;
+
+      padding-right: 0;
+   }
+
+   .song-info-section, .volume-section {
+      min-width: 0;
+   }
+
+   .song-info-section .img-wrapper {
+      height: 45px;
+      flex-shrink: 0;
+   }
+
+   .control-buttons {
+      gap: 15px;
+      min-width: 0;
+  }
+}
+
+@media screen and (max-width: 400px) {
+
+   .hidden-xxs-toolbar {
+      display: none;
+   }
+
+   
+}

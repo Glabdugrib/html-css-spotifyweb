@@ -269,6 +269,7 @@ main {
    text-transform: uppercase;
    font-weight: bold;
    margin-right: 25px;
+   transition: all 0.3s ease;
 }
 
 .upgrade-btn:hover {
@@ -355,20 +356,27 @@ main {
    cursor: pointer;
 }
 
-.card-thumb:hover::after {
+.card-thumb::after {
    content: "\f144";
    display: flex;
    justify-content: center;
    align-items: center;
    font-family: "Font Awesome 5 Free";
    color: white;
-   font-size: calc(15px + 4vw);
+   /* font-size: calc(15px + 4vw); */
+   font-size: calc(40vw * 0.15);
    position: absolute;
    top: 0;
    right: 0;
    left: 0;
    bottom: 0;
    background-color: rgba(0, 0, 0, 0.7);
+   opacity: 0;
+   transition: opacity 0.7s ease;
+}
+
+.card-thumb:hover::after {
+   opacity: 1;
 }
 
 .card-desc {
@@ -545,7 +553,7 @@ main {
    position: absolute;
    left: 0;
    z-index: 1;
-   width: 25%;
+   width: 65%;
    height: 100%;
    border-radius: 6px;
    background-color: #FFFFFF;
@@ -652,6 +660,10 @@ main {
    .card {
       width: calc((100% - 10px) / 2);
    }
+
+   .card-thumb::after {
+      font-size: calc(40vw * 0.35);
+   }
 }
 
 /* XS layout */
@@ -715,6 +727,10 @@ main {
 
    .home-section li.active::after {
       left: 0;
+   }
+
+   .card-thumb::after {
+      font-size: calc(40vw * 0.5);
    }
 }
 
