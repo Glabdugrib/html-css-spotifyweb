@@ -20,7 +20,41 @@
 
 /* BONUS 2 - Hide upgrade cta */
 
+@media screen and (max-height: 700px) {
 
+   @keyframes slideup {
+      from {
+         top: 0;
+      }
+    
+      to {
+         top: -85px;
+         display: none;
+      }
+   }
+   
+   .upgrade-section {
+      animation-duration: 1s;
+      animation-name: slideup;
+      animation-fill-mode: forwards;
+   }
+
+   @keyframes slideup-main-content {
+      from {
+         padding-top: 85px;
+      }
+    
+      to {
+         padding-top: 0;
+      }
+   }
+   
+   .main-content {
+      animation-duration: 1s;
+      animation-name: slideup-main-content;
+      animation-fill-mode: forwards;
+   }
+}
 
 
 
@@ -89,5 +123,5 @@
       display: none;
    }
 
-   
+
 }
